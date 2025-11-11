@@ -14,23 +14,6 @@ Using **Machine Learning techniques**, the project helps estimate ticket prices 
 
 ---
 
-## 📂 Dataset Description
-The dataset contains historical train booking data with multiple features influencing the ticket price.
-
-| Feature | Description |
-|----------|--------------|
-| **Train_Name** | Name or type of train (e.g., Rajdhani, Shatabdi, Express) |
-| **Source** | Departure station |
-| **Destination** | Arrival station |
-| **Date_of_Journey** | Date when the journey starts |
-| **Class** | Travel class (e.g., Sleeper, 3A, 2A, 1A) |
-| **Quota** | Ticket quota type (e.g., General, Tatkal) |
-| **Duration** | Total travel time |
-| **Stops** | Number of stops between source and destination |
-| **Price** | Target variable (ticket price) |
-
----
-
 ## 🧹 Data Preprocessing
 1. Cleaned missing and inconsistent values.  
 2. Converted date columns into useful time-based features (day, month, weekday).  
@@ -89,9 +72,3 @@ Evaluated models using regression metrics:
 - **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, XGBoost  
 - **Environment:** Jupyter Notebook / VS Code  
 - **Deployment:** Flask Framework  
-
-    prediction = model.predict([list(data.values())])
-    return jsonify({'Predicted Ticket Price': round(prediction[0], 2)})
-
-if __name__ == '__main__':
-    app.run(debug=True)
