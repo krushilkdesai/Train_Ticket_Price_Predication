@@ -1,74 +1,153 @@
-# Train_Ticket_Price_Predication
+# Train Ticket Price Prediction
+
+A Machine Learning application to predict train ticket prices using **Random Forest Regressor**. Includes a Flask web application for real-time price predictions.
+
+---
+
+## 📋 Table of Contents
+- [Project Overview](#-project-overview)
+- [Objective](#-objective)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [How to Run](#-how-to-run)
+- [Features](#-features)
+- [Model Details](#-model-details)
+- [Technologies Used](#-technologies-used)
+
+---
 
 ## 📘 Project Overview
-The **Train Ticket Price Prediction** project aims to predict train ticket prices based on travel details such as source, destination, date, train type, and class.  
-Using **Machine Learning techniques**, the project helps estimate ticket prices dynamically, providing insights for both passengers and railway operators.
+
+The **Train Ticket Price Prediction** project predicts train ticket prices based on travel parameters using a **Random Forest Regressor** machine learning model. The system includes:
+- Data preprocessing and analysis via Jupyter Notebook
+- Trained Random Forest model saved as a pickle file
+- Flask web application for user-friendly predictions
+- Support for 11 different train types and multiple routes
 
 ---
 
 ## 🎯 Objective
-- Predict the **ticket price** based on journey parameters.  
-- Build and compare multiple **regression models** to find the best-performing one.  
-- Perform **data preprocessing**, **feature engineering**, and **model evaluation** for optimal performance.  
-- Deploy the model using **Flask** for real-time prediction.
+
+- Predict train ticket prices based on train type, source city, and destination city
+- Provide a simple web interface for real-time price predictions
+- Ensure accurate and reliable price estimations using Random Forest Regressor
+- Validate input to prevent invalid route selections
 
 ---
 
-## 🧹 Data Preprocessing
-1. Cleaned missing and inconsistent values.  
-2. Converted date columns into useful time-based features (day, month, weekday).  
-3. Encoded categorical variables such as `Source`, `Destination`, `Train_Name`, and `Class`.  
-4. Normalized numerical data using **StandardScaler** for better model convergence.  
-5. Split data into **training (80%)** and **testing (20%)** sets.
+## 📁 Project Structure
+
+```
+Train_Ticket_Price_Prediction/
+│
+├── rail.csv                              # Dataset with historical train data
+├── main.py                               # Flask web application
+├── Rail_Ticket_Price_Predication.ipynb  # Jupyter notebook with data analysis
+├── README.md                             # Project documentation
+├── random_forest_regression_model.pkl   # Trained Random Forest model
+│
+└── templates/
+    └── index.html                        # Web interface
+```
 
 ---
 
-## 📊 Exploratory Data Analysis (EDA)
-Performed EDA to understand the impact of various factors on ticket prices:
-- Relationship between **journey duration** and **price**.  
-- Price variation by **train type**, **class**, and **quota**.  
-- Seasonal trends based on **month** and **day of journey**.  
-- Used **Matplotlib** and **Seaborn** for visualizations.
+## 💻 Installation
+
+### Prerequisites
+- Python 3.7 or higher
+- pip package manager
+
+### Setup
+
+1. **Clone or Download the Project**
+   ```bash
+   cd Train_Ticket_Price_Prediction
+   ```
+
+2. **Create Virtual Environment (Optional)**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   pip install flask pandas numpy scikit-learn matplotlib seaborn jupyter
+   ```
 
 ---
 
-## ⚙️ Model Building
-Trained multiple regression algorithms to predict ticket prices:
+## 🚀 How to Run
 
-1. **Linear Regression**  
-2. **Decision Tree Regressor**  
-3. **Random Forest Regressor**  
-4. **Gradient Boosting Regressor**  
-5. **XGBoost Regressor**
+### Run Web Application
+```bash
+python main.py
+```
+- Opens at `http://localhost:5000`
+- Select train, source, and destination city
+- Click "Predict Price" to get the estimated ticket price
 
----
-
-## 🧪 Model Comparison
-
-| Model | R² Score | RMSE |
-|:------|:----------:|:------:|
-| Linear Regression | 0.85 | 220.45 |
-| Decision Tree | 0.92 | 140.12 |
-| Random Forest | 0.96 | 98.32 |
-| Gradient Boosting | 0.97 | 85.45 |
-| **XGBoost** | **0.98** | **78.90** |
-
-🏆 **Best Performing Model:**  
-✅ **XGBoost Regressor** achieved the highest accuracy with an R² Score of **0.98**, making it the most reliable for real-world prediction.
+### Run Jupyter Notebook
+```bash
+jupyter notebook Rail_Ticket_Price_Predication.ipynb
+```
+- Explore data analysis and model building
+- Review preprocessing steps and visualizations
 
 ---
 
-## 📈 Model Evaluation
-Evaluated models using regression metrics:
-- **R² Score**  
-- **Mean Absolute Error (MAE)**  
-- **Mean Squared Error (MSE)**  
-- **Root Mean Squared Error (RMSE)**  
+## ✨ Features
+
+✅ **Random Forest Regressor Model** - Accurate price predictions  
+✅ **User-Friendly Web Interface** - Simple dropdown selection  
+✅ **11 Train Types Supported** - Garib Rath, Humsafar Express, Rajdhani Express, etc.  
+✅ **Multiple Routes** - 5 source cities & 6 destination cities  
+✅ **Input Validation** - Prevents same source and destination selection  
+✅ **Real-Time Predictions** - Instant price estimates  
+✅ **Responsive Design** - Works on desktop and mobile  
 
 ---
 
-## 🧠 Technologies Used
-- **Programming Language:** Python  
-- **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, XGBoost  
-- **Environment:** Jupyter Notebook / VS Code  
-- **Deployment:** Flask Framework  
+## 🤖 Model Details
+
+**Algorithm:** Random Forest Regressor
+
+**Performance Metrics:**
+- **R² Score:** 0.96 (explains 96% of price variance)
+- **RMSE:** ₹98.32 (average prediction error)
+- **Model File:** `random_forest_regression_model.pkl`
+
+**Input Parameters:**
+- Train Type (11 categories)
+- Source City (5 options)
+- Destination City (6 options)
+
+**Output:**
+- Predicted ticket price in Indian Rupees (₹)
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|:-----------|:---------|
+| **Python** | Core programming language |
+| **Scikit-learn** | Random Forest Regressor |
+| **Pandas & NumPy** | Data manipulation |
+| **Flask** | Web framework |
+| **HTML/CSS/Bootstrap** | Web interface |
+| **Jupyter Notebook** | Data exploration |
+| **Matplotlib & Seaborn** | Data visualization |
+
+---
+
+## 📝 Additional Notes
+
+- Source and destination cities cannot be the same
+- Ticket prices are predicted in Indian Rupees (₹)
+- The model uses a pre-trained pickle file for consistent predictions
+- No internet connection required for local predictions
+
+---
+
