@@ -76,6 +76,21 @@ Train_Ticket_Price_Prediction/
    pip install flask pandas numpy scikit-learn matplotlib seaborn jupyter
    ```
 
+### Deploy to Vercel
+1. Install the Vercel CLI if it is not already installed:
+   ```bash
+   npm install -g vercel
+   ```
+2. Log into Vercel and deploy from your project folder:
+   ```bash
+   cd /Users/kk/AI_Projects/Train_Ticket_Price_Predication
+   vercel login
+   vercel
+   ```
+3. Confirm the default settings when prompted.
+
+This project now includes `vercel.json`, `requirements.txt`, and an `api/main.py` entrypoint for deployment.
+
 ---
 
 ## 🚀 How to Run
