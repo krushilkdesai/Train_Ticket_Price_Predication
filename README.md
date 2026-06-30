@@ -2,7 +2,8 @@
 
 A Machine Learning application to predict train ticket prices using **Random Forest Regressor**. Includes a Flask web application for real-time price predictions.
 
----
+------
+
 
 ## 📋 Table of Contents
 - [Project Overview](#-project-overview)
